@@ -7,28 +7,46 @@ export default {
   theme: {
     extend: {
       colors: {
+        brand: {
+          DEFAULT: '#F4A522',
+          hover: '#df9419',
+          amber: '#F4A522',
+        },
+        carbon: {
+          DEFAULT: '#1D1D1B',
+          dark: '#141412',
+          card: '#222220',
+        },
+        pearl: {
+          DEFAULT: '#F7F7F8',
+        },
+        muted: {
+          DEFAULT: '#5A5A5C',
+          light: '#8E8E93',
+          border: '#E5E5E7',
+        },
+        // Backward-compatible tokens mapped to official palette
+        gold: {
+          DEFAULT: '#F4A522',
+          deep: '#df9419',
+          pale: '#fce5be',
+          bright: '#F4A522',
+        },
         ink: {
-          DEFAULT: '#0a0908',
-          soft: '#14110f',
-          warm: '#1a1714',
-          charcoal: '#2a2724',
+          DEFAULT: '#1D1D1B',
+          soft: '#2A2A28',
+          warm: '#1D1D1B',
+          charcoal: '#2A2A28',
         },
         paper: {
-          DEFAULT: '#ffffff',
-          bone: '#ffffff',
-          cream: '#fcfbf9',
-        },
-        gold: {
-          DEFAULT: '#c9a961',
-          deep: '#a88a45',
-          pale: '#e8d5a3',
-          bright: '#d4b76a',
+          DEFAULT: '#FFFFFF',
+          bone: '#FFFFFF',
+          cream: '#F7F7F8',
         },
         ash: {
-          DEFAULT: '#8a8580',
-          soft: '#b8b3ac',
+          DEFAULT: '#5A5A5C',
+          soft: '#8E8E93',
         },
-        rust: '#b8654a',
       },
       fontFamily: {
         display: ['Fraunces', 'Playfair Display', 'Georgia', 'serif'],
@@ -40,9 +58,10 @@ export default {
         editorial: 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
       boxShadow: {
-        editorial: '0 40px 100px -30px rgba(10, 9, 8, 0.2), 0 15px 40px -10px rgba(10, 9, 8, 0.1)',
-        card: '0 20px 60px -20px rgba(10, 9, 8, 0.15)',
-        'card-hover': '0 30px 80px -20px rgba(10, 9, 8, 0.2)',
+        editorial: '0 40px 100px -30px rgba(29, 29, 27, 0.15), 0 15px 40px -10px rgba(29, 29, 27, 0.08)',
+        card: '0 10px 40px -15px rgba(29, 29, 27, 0.08)',
+        'card-hover': '0 20px 50px -15px rgba(244, 165, 34, 0.18)',
+        whatsapp: '0 10px 25px -5px rgba(37, 211, 102, 0.4)',
       },
     },
   },

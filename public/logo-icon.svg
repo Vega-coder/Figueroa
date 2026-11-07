@@ -1,4 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <rect width="100" height="100" rx="16" fill="#0A0908"/>
-  <text x="50" y="64" font-family="'Fraunces', serif" font-size="44" font-weight="300" fill="#C9A961" text-anchor="middle" letter-spacing="2">GF</text>
+<svg viewBox="75 15 305 390" width="305" height="390" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer G head silhouette -->
+  <path fill="#1D1D1B" d="M 200 20 C 135 20 86 68 86 155 L 86 265 C 86 352 135 400 200 400 C 260 400 306 360 315 282 C 325 248 350 226 376 224 C 334 228 288 236 256 242 C 254 254 250 268 244 280 C 234 298 218 308 200 308 C 182 308 166 298 156 280 C 150 268 146 254 146 242 L 172 242 L 172 132 C 172 102 184 84 200 84 C 216 84 228 102 228 132 L 228 190 L 294 190 L 294 155 C 294 68 265 20 200 20 Z" />
+  <!-- Inner White collar / shirt -->
+  <path fill="#FFFFFF" d="M 172 132 C 172 102 184 84 200 84 C 216 84 228 102 228 132 L 228 215 C 235 218 248 226 248 245 C 248 274 230 308 200 308 C 170 308 152 274 152 245 C 152 226 165 218 172 215 Z" />
+  <!-- Inner Black tie / neck -->
+  <path fill="#1D1D1B" d="M 166 226 C 174 206 195 200 228 200 C 233 200 236 210 228 218 C 214 221 194 222 178 232 C 172 236 166 236 166 226 Z" />
+  <!-- Eyes -->
+  <circle cx="188" cy="244" r="3.8" fill="#1D1D1B" />
+  <circle cx="212" cy="244" r="3.8" fill="#1D1D1B" />
+  <!-- Mustache in brand gold/mustard -->
+  <path fill="#F4A522" d="M 200 264 C 192 260 182 258 171 264 C 160 270 152 271 143 262 C 150 281 170 283 185 277 C 194 273 198 271 200 272 C 202 271 206 273 215 277 C 230 283 250 281 257 262 C 248 271 240 270 229 264 C 218 258 208 260 200 264 Z" />
 </svg>

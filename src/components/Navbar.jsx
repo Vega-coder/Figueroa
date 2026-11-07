@@ -1,60 +1,58 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FiMenu, FiX, FiArrowUpRight } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
+import { SITE_CONFIG } from "../config/siteConfig";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
-    { name: "Diario", path: "/blog" },
-    { name: "Estudio", path: "/estudio" },
-    { name: "Servicios", path: "/servicios" },
-    { name: "Portafolio", path: "/portafolio" },
-    { name: "Proceso", path: "/proceso" },
-    { name: "Revista", path: "/revista" },
-    { name: "Contacto", path: "/contacto" },
-  ];
-
-  const menuItems = [
     { name: "Inicio", path: "/" },
-    ...navItems
+    { name: "Fotografía Comercial", path: "/fotografia-comercial" },
+    { name: "Estrategia & Web", path: "/estrategia-web" },
+    { name: "IA + Factor Humano", path: "/ia-factor-humano" },
+    { name: "Casos / Portafolio", path: "/portafolio" },
   ];
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur-md border-b border-ink/10 transition-all duration-300">
-        <div className="container-editorial flex items-center justify-between h-20 md:h-24">
-          {/* Logo / Brand mark */}
+      <header className="sticky top-0 z-40 bg-paper/95 backdrop-blur-md border-b border-muted-border transition-all duration-300">
+        <div className="container-editorial flex items-center justify-between h-20 md:h-22">
+          {/* Logo Horizontal: Isotipo + Nombre + Tagline */}
           <Link to="/" className="flex items-center gap-3.5 group">
-            <div className="w-10 h-10 rounded-full border border-ink/20 flex items-center justify-center font-display font-light text-ink text-base group-hover:border-gold transition-colors duration-500">
-              GF
+            {/* Isotipo auténtico: Letra G con bigote */}
+            <div className="w-11 h-11 flex-shrink-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <img
+                src="./isotype.svg"
+                alt="Gemberth Figueroa Isotipo"
+                className="w-full h-full object-contain"
+              />
             </div>
+
             <div className="flex flex-col">
-              <span className="font-display tracking-[0.18em] text-xs md:text-sm font-semibold uppercase text-ink group-hover:text-gold-deep transition-colors duration-500">
+              <span className="font-display tracking-[0.14em] text-sm md:text-base font-bold uppercase text-carbon group-hover:text-brand transition-colors">
                 Gemberth Figueroa
               </span>
-              <span className="text-[0.62rem] uppercase tracking-[0.28em] text-ash font-medium">
-                Fotografía & Diseño de Autor
+              <span className="text-[0.58rem] sm:text-[0.62rem] uppercase tracking-[0.24em] text-muted font-semibold">
+                Fotografía · Estrategia Digital · IA
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-[0.7rem] uppercase tracking-[0.22em] font-medium text-ink/75">
+          {/* Desktop Clean Horizontal Nav */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[0.72rem] uppercase tracking-[0.18em] font-medium text-carbon/80">
             {navItems.map((item) => {
-              const isActive =
-                item.path === "/blog"
-                  ? location.pathname === "/blog" || location.pathname === "/diario"
-                  : location.pathname === item.path;
+              const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`transition-colors duration-300 py-1 ${
+                  className={`transition-colors duration-200 py-1 ${
                     isActive
-                      ? "text-gold-deep font-semibold border-b border-gold-deep"
-                      : "hover:text-gold-deep"
+                      ? "text-brand font-bold border-b-2 border-brand"
+                      : "hover:text-brand"
                   }`}
                 >
                   {item.name}
@@ -63,88 +61,99 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Action Button & Mobile Menu Trigger */}
-          <div className="flex items-center gap-4">
-            <Link
-              to="/contacto"
-              className="hidden sm:inline-flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.25em] font-semibold text-ink border border-ink/25 px-4 py-2 hover:border-gold hover:text-gold-deep transition-all duration-500"
+          {/* CTA Button: Cotizar por WhatsApp */}
+          <div className="flex items-center gap-3">
+            <a
+              href={SITE_CONFIG.getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-2 bg-brand hover:bg-brand-hover text-carbon px-5 py-2.5 rounded text-[0.72rem] uppercase tracking-[0.2em] font-bold shadow-sm transition-all duration-300 hover:scale-[1.02] cursor-pointer"
             >
-              <span>Escríbenos</span>
-              <FiArrowUpRight className="text-xs" />
-            </Link>
+              <FaWhatsapp className="text-base" />
+              <span>Cotizar por WhatsApp</span>
+            </a>
 
+            {/* Mobile menu trigger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center gap-2 px-3 py-2 text-ink hover:text-gold-deep transition-colors duration-300 cursor-pointer"
+              className="lg:hidden p-2 text-carbon hover:text-brand transition-colors cursor-pointer"
               aria-label="Abrir menú"
             >
-              <span className="text-[0.7rem] uppercase tracking-[0.25em] font-semibold hidden md:inline">
-                {isOpen ? "Cerrar" : "Menú"}
-              </span>
-              {isOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
+              {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Fullscreen Overlay Menu */}
+      {/* Mobile Drawer Menu */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-ink text-paper flex flex-col justify-between p-8 md:p-16 animate-fadeIn transition-opacity duration-500 overflow-y-auto">
-          <div className="flex justify-between items-center border-b border-paper/10 pb-6">
-            <span className="text-[0.7rem] uppercase tracking-[0.3em] text-gold font-medium">
-              Índice General · MMXXIV
-            </span>
+        <div className="fixed inset-0 z-50 bg-carbon text-paper flex flex-col justify-between p-6 sm:p-10 animate-fadeIn lg:hidden overflow-y-auto">
+          <div className="flex justify-between items-center border-b border-paper/10 pb-5">
+            <div className="flex items-center gap-3">
+              <img
+                src="./isotype-dark.svg"
+                alt="Isotipo"
+                className="w-9 h-9 object-contain"
+              />
+              <div className="flex flex-col">
+                <span className="font-display text-sm font-bold tracking-wider text-paper uppercase">
+                  Gemberth Figueroa
+                </span>
+                <span className="text-[0.55rem] uppercase tracking-widest text-brand">
+                  Ocaña · Colombia
+                </span>
+              </div>
+            </div>
+
             <button
               onClick={() => setIsOpen(false)}
-              className="text-paper/70 hover:text-gold transition-colors p-2 text-2xl cursor-pointer"
+              className="text-paper/80 hover:text-brand text-2xl p-2 cursor-pointer"
               aria-label="Cerrar"
             >
               <FiX />
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto max-w-5xl mx-auto w-full py-8">
-            <div className="space-y-3 sm:space-y-4">
-              {menuItems.map((link) => {
-                const isActive = location.pathname === link.path;
-                return (
-                  <div key={link.path} className="overflow-hidden">
-                    <Link
-                      to={link.path}
-                      onClick={() => setIsOpen(false)}
-                      className={`block font-display text-2xl sm:text-4xl md:text-5xl font-light tracking-tight transition-all duration-300 ${
-                        isActive
-                          ? "text-gold italic pl-2 border-l border-gold"
-                          : "text-paper/90 hover:text-gold hover:translate-x-2"
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="border-t md:border-t-0 md:border-l border-paper/10 pt-8 md:pt-0 md:pl-12 flex flex-col justify-between">
-              <div>
-                <p className="text-[0.68rem] uppercase tracking-[0.3em] text-ash font-medium mb-3">
-                  Estudio Creativo Boutique
-                </p>
-                <p className="font-serif italic text-lg md:text-xl text-paper/80 leading-relaxed">
-                  "Fotografía, dirección de arte y diseño concebidos con la cadencia y devoción del oficio artesanal."
-                </p>
-              </div>
-
-              <div className="mt-8 space-y-2 text-[0.75rem] text-ash-soft">
-                <p className="font-mono text-paper/90">contacto@gemberthfigueroa.com</p>
-                <p>Ciudad de México · Proyectos globales</p>
-              </div>
-            </div>
+          <div className="py-8 space-y-4 my-auto">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`block font-display text-2xl sm:text-3xl font-light tracking-tight transition-colors ${
+                    isActive ? "text-brand font-semibold italic pl-3 border-l-2 border-brand" : "text-paper/90 hover:text-brand"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </div>
 
-          <div className="border-t border-paper/10 pt-4 flex flex-col md:flex-row justify-between text-[0.68rem] text-ash uppercase tracking-[0.25em]">
-            <span>© 2026 Gemberth Figueroa</span>
-            <span>Hecho con tiempo, no con prisa.</span>
+          <div className="pt-6 border-t border-paper/10 space-y-4">
+            <a
+              href={SITE_CONFIG.getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 bg-brand text-carbon py-3.5 rounded font-bold uppercase text-xs tracking-widest shadow-md"
+            >
+              <FaWhatsapp className="text-lg" />
+              <span>Cotizar por WhatsApp</span>
+            </a>
+
+            <div className="flex justify-between items-center text-[0.65rem] text-ash uppercase tracking-wider">
+              <span>{SITE_CONFIG.location}</span>
+              <a
+                href={SITE_CONFIG.instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-brand"
+              >
+                {SITE_CONFIG.instagram}
+              </a>
+            </div>
           </div>
         </div>
       )}
