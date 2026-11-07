@@ -6,7 +6,8 @@ export const SITE_CONFIG = {
   instagramUrl: "https://instagram.com/gemberthfigueroa1",
   
   // WhatsApp Configuration (Colombia +57)
-  whatsappNumber: "573155700728", // Configurable Colombian line
+  whatsappNumber: "573104837004", // WhatsApp oficial de Gemberth Figueroa
+  whatsappDisplay: "+57 310 483 7004",
   whatsappDefaultMsg: "Hola Gemberth, vi tu sitio web y quiero cotizar una solución para mi negocio.",
   
   // Generate WhatsApp links with preloaded messages

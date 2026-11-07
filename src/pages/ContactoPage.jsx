@@ -114,7 +114,7 @@ export default function ContactoPage() {
                             type="tel"
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            placeholder="+52 55 ..."
+                            placeholder="+57 310 ..."
                             className="w-full bg-[#faf9f7] border border-ink/15 px-4 py-3 text-sm focus:outline-none focus:border-gold transition-colors"
                           />
                         </div>
@@ -204,8 +204,8 @@ export default function ContactoPage() {
                     <FiPhone className="text-gold-deep text-lg mt-0.5" />
                     <div>
                       <span className="text-[0.65rem] uppercase tracking-wider text-ash block">Teléfono / WhatsApp</span>
-                      <a href="tel:+525512345678" className="font-mono text-ink hover:text-gold-deep transition-colors">
-                        +52 55 1234 5678
+                      <a href="https://wa.me/573104837004" target="_blank" rel="noopener noreferrer" className="font-mono text-ink hover:text-gold-deep transition-colors">
+                        +57 310 483 7004
                       </a>
                     </div>
                   </div>
@@ -224,7 +224,7 @@ export default function ContactoPage() {
                     <FiMapPin className="text-gold-deep text-lg mt-0.5" />
                     <div>
                       <span className="text-[0.65rem] uppercase tracking-wider text-ash block">Estudio Físico</span>
-                      <span className="text-ink">Ciudad de México · Proyectos locales y globales</span>
+                      <span className="text-ink">Ocaña, Norte de Santander · Proyectos en toda Colombia</span>
                     </div>
                   </div>
 
