@@ -11,13 +11,13 @@ export default function FeaturedArticle({ onOpenArticle }) {
           className="group cursor-pointer grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
         >
           {/* Featured Visual */}
-          <div className="lg:col-span-7 overflow-hidden border border-ink/10 bg-paper">
-            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden">
+          <div className="lg:col-span-7 overflow-hidden border border-ink/10 bg-ink/5">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden bg-ink/10">
               <img
                 src={featuredPost.image}
                 alt={featuredPost.title}
                 className="w-full h-full object-cover grayscale-[15%] contrast-[105%] group-hover:scale-105 group-hover:grayscale-0 transition-transform duration-700 ease-editorial"
-                loading="lazy"
+                loading="eager"
               />
               <div className="absolute top-4 left-4 bg-paper/90 backdrop-blur-md px-3 py-1 border border-ink/10">
                 <span className="text-[0.65rem] uppercase tracking-[0.25em] font-semibold text-ink">

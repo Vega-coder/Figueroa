@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FiX, FiClock, FiCalendar, FiShare2 } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
 
 export default function ArticleModal({ article, onClose }) {
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function ArticleModal({ article, onClose }) {
   if (!article) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-ink/70 backdrop-blur-sm flex justify-center items-start p-4 sm:p-6 md:p-12 animate-fadeIn">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-ink/80 backdrop-blur-sm flex justify-center items-start p-4 sm:p-6 md:p-12 animate-fadeIn">
       <div className="relative bg-paper text-ink w-full max-w-4xl border border-ink/20 shadow-2xl my-8 overflow-hidden">
         {/* Top Control Bar */}
         <div className="sticky top-0 z-20 bg-paper/95 backdrop-blur-md border-b border-ink/10 px-6 sm:px-10 py-4 flex items-center justify-between">
@@ -62,7 +62,7 @@ export default function ArticleModal({ article, onClose }) {
           </div>
 
           {/* Image */}
-          <div className="my-8 aspect-[16/9] w-full overflow-hidden border border-ink/10">
+          <div className="my-8 aspect-[16/9] w-full overflow-hidden border border-ink/10 bg-ink/10">
             <img
               src={article.image}
               alt={article.title}

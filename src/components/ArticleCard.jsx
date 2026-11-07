@@ -9,7 +9,7 @@ export default function ArticleCard({ post, onOpenArticle }) {
     >
       <div>
         {/* Post Image */}
-        <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/5 mb-6 border border-ink/5">
+        <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink/10 mb-6 border border-ink/5">
           <img
             src={post.image}
             alt={post.title}
